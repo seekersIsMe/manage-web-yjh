@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .element{
+            background-color: red;
+            width: 100px;
+            height: 50px;
+            position: fixed;
+            left: 70%;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- dom -->
+    <div class="element"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+    <script>
+        $(".element").velocity({
+            top: 0
+        }, {
+            duration: 450,
+            // delay: 1000
+        });
+        setTimeout(()=>{
+            $(".element").velocity("reverse", { duration: 2000 });
+        }, 2000)
+    </script>
+</body>
+</html>
