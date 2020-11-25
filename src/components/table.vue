@@ -10,7 +10,6 @@
           :data="tableData"
           :border="true"
           :max-height="maxHeight"
-          v-loadmore="loadmore"
           @selection-change="checkBoxchange"
           @cell-click="cellClick"
           @row-click="rowClick"
@@ -70,7 +69,7 @@
     </div>
 </template>
 <style lang="less">
-  @import "../../common/less/const";
+  @import "../common/const";
   .myTable{
     height: 100%;
     box-sizing: border-box;
@@ -183,8 +182,7 @@
   }
 </style>
 <script>
-  import {getTableMaxHeight} from '@/common/js/getTableMaxHeight';
-  import {cloneObj} from '../../util/util';
+  import {cloneObj} from '../util/util';
   export default {
     props: {
       // 行点击
@@ -265,7 +263,6 @@
     mounted () {
       this.$nextTick(() => {
         this.changePaginationSize();
-        setTimeout(this.winResize, 20);
       });
     },
     computed: {
@@ -291,13 +288,6 @@
       },
       loadmore () {
         this.$emit('loadmore');
-      },
-      winResize () {
-        this.getTableHeight();
-//        window.onresize = this.getTableHeight;
-      },
-      getTableHeight () {
-        this.maxHeight = getTableMaxHeight(this.$refs.tableBox, this.isHasPagination);
       },
       getFixed (item) {
         if (item.hasOwnProperty('fixed')) {

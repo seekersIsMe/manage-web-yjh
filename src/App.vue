@@ -25,7 +25,9 @@
         </div>
       </el-menu>
     </div>
-    <router-view />
+    <div class="connent">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -91,6 +93,10 @@ export default {
       color: white;
       font: 20px;
     }
+  }
+  .connent{
+    padding: 10px;
+    box-sizing: border-box;
   }
 }
 </style>

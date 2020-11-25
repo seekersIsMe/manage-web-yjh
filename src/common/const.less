@@ -1,0 +1,199 @@
+@topHeight:50px;//top的高度
+@menuWidth:50px;// 菜单未展开的宽度
+@topBreadHeight :40px;// 顶部面包屑的高度
+@topInputGroupHeight:60px; //顶部输入框组高度
+@gap:20px;//空白间隙
+@table-rowHeight:30px;//表格每行的高度
+@singleInputHeight:32px;//input输入框的高度
+@singleInputWidth:180px;//input输入框的宽度
+@timePickerInputWidth:250px;//input时间选择组件的宽度
+@inputGroupGap:10px;//每个input和label之间的间距
+@titleHeight:50px;//每快的标题高度
+@bodyHeight:calc(100vh - 130px);//除去top，面包屑，inputgroup以及间隙，剩余的高度
+@btnWidth:56px;//按钮的宽度
+@btnHeight:32px;//按钮的高度
+@btnBackgroundColor:#1890FF;//按钮背景颜色
+@backgroundColor:rgb(251,251,251);//内容区的背景色
+@moduleBackgroundColor:white;//每一块的背景色
+body{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+//去除高德地图的logo
+.amap-logo,.amap-copyright{
+  opacity: 0;
+}
+.bg-white{
+  background-color: @moduleBackgroundColor;
+}
+.marg-left20{
+  margin-left:@gap;
+}
+.marg-right20{
+  margin-right: @gap;
+}
+.marg-top20{
+  margin-top: @gap;
+}
+.select-heigth{
+  height:@topInputGroupHeight;
+}
+.wrapper-padding{
+  padding: 0 @gap @gap @gap;
+}
+.topTitle{
+  height: @titleHeight;
+  line-height: @titleHeight;
+  font-size: 16px;
+  color:rgba(0,0,0,0.85);
+  font-weight:500;
+  padding-left: 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #E9E9E9;
+}
+.topTitle:before{
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: @titleHeight/5*2;
+  margin-right: 10px;
+  background-color: #1890FF;
+  margin-bottom: -@titleHeight/10;
+}
+.bodyHeight{
+  height: @bodyHeight;
+}
+.module-border{
+  border: 1px solid #E9E9E9;
+  box-sizing: border-box;
+}
+.marg-btm20{
+  margin-bottom: @gap;
+}
+.marg-left-20{
+  margin-left:-@gap;
+}
+.marg-right-20{
+  margin-right:-@gap;
+}
+.padding10{
+  padding: 10px;
+}
+.otherSelect{
+  border-top: 1px dashed #E9E9E9;
+  border-bottom:1px dashed #E9E9E9
+}
+.data-show-wrapper{
+  padding: @gap @gap 0 @gap;
+  border: 1px solid #E9E9E9;
+  box-sizing: border-box;
+  background-color: @moduleBackgroundColor;
+}
+.breadcrumb{
+  border-bottom: 1px solid #E9E9E9;
+  box-sizing: border-box;
+}
+.el-tabs__content{
+  margin-top: 10px;
+}
+.data-show-wrapper-pad {
+  padding-bottom: @gap;
+}
+.btnquery{
+  background: #1890FF;
+  color: #fff;
+  border: 1px solid #1890FF;
+  padding: 9px 15px;
+}
+.btnquery:hover{
+  background: #66b1ff;
+}
+.overflowH{
+  overflow: hidden;
+}
+.el-checkbox__label{
+  font-size: 12px;
+}
+.pos-re{
+  position: relative;
+}
+@media (max-width: 1600px) and (max-height: 1000px){
+  .btnquery{
+    padding: 6px 15px;
+  }
+  .padding10{
+    padding: 3*@gap/10;
+  }
+  .data-show-wrapper{
+    padding: 3*@gap/10 3*@gap/10 0 3*@gap/10;
+  }
+  .data-show-wrapper-pad {
+    padding-bottom: 3*@gap/10;
+  }
+  .marg-left20{
+    margin-left:3*@gap/10;
+  }
+  .marg-right20{
+    margin-right: 3*@gap/10;
+  }
+  .marg-top20{
+    margin-top: 3*@gap/10;
+  }
+  .marg-btm20{
+    margin-bottom: 3*@gap/10;
+  }
+  .marg-left-20{
+    margin-left:-3*@gap/10;
+  }
+  .marg-right-20{
+    margin-right:-3*@gap/10;
+  }
+  .select-heigth{
+    height:@topInputGroupHeight/6*5;
+  }
+  .wrapper-padding{
+    padding: 0 3*@gap/10 3*@gap/10 3*@gap/10;
+  }
+  .topTitle{
+    line-height:@titleHeight/5*3;
+    height:@titleHeight/5*3;
+    font-size: 14px;
+    padding-left: 10px;
+  }
+  .bodyHeight{
+    height:calc(@bodyHeight + 40px);
+  }
+  // tab
+  .el-tabs__nav{
+    &>.el-tabs__item{
+      font-size: 14px !important;
+      line-height: 30px;
+      height: 30px;
+    }
+  }
+
+  .topTitle:before{
+    width: 3px;
+    height: 15px;
+    margin-bottom: -2px;
+  }
+}
+
+/*隐藏，不会引起强烈的回流，会引起重绘*/
+.hidden{
+  position:absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.text-c{
+  text-align: center;
+}
+.wrapper{
+  font-size: 12px;
+  position: absolute;
+  top: @topHeight;
+  left: @menuWidth;
+  right: 0px;
+  bottom: 0;
+  background: @backgroundColor;
+}
+
+
